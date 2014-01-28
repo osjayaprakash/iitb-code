@@ -1,0 +1,22 @@
+0	film, movie, picture, series
+1	story, plot, script, storyline
+2	cast
+3	direction, director
+4	production, producer, filmmaker
+5	music, dance
+6	audience, veiwer, critics
+7	facts, view	
+11	dialogue, scene
+12	book, novel, writer
+13	premise, theme, message
+14	genre, classic, animation
+21	performance, acting
+22	actor, actress, villain, role
+31	screenplay, cinematography, effects , action, color, background
+32	casting, editing, shoot, set
+41	production, producer, filmmaker
+42	budget, cost
+51	dance, choreography
+52	voice, sound, song, lyrics
+61	critics, viewer
+62	awards
