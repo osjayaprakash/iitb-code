@@ -23,7 +23,8 @@ public class ScoreA2 implements ScoreA {
 			Double score = aspScore.get(asp);
 			if(score == null)
 				score = 0.0;
-			aspScore.put(asp, score+sScore);
+			score += Math.abs(sScore);
+			aspScore.put(asp, score);
 		}
 		
 		for(Aspect asp: aspScore.keySet()){

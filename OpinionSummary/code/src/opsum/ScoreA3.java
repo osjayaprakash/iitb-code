@@ -26,14 +26,16 @@ public class ScoreA3 implements ScoreA {
 				Double score = aspScoreNeg.get(asp);
 				if (score == null)
 					score = 0.0;
-				aspScoreNeg.put(asp, score + sScore);
+				score += Math.abs(sScore);
+				aspScoreNeg.put(asp, score);
 			} else {
 				Double score = aspScorePos.get(asp);
 				if (score == null)
 					score = 0.0;
-				aspScorePos.put(asp, score + sScore);
-
+				score += Math.abs(sScore);
+				aspScorePos.put(asp, score);
 			}
+
 		}
 
 		for (Aspect asp : aspScorePos.keySet()) {
