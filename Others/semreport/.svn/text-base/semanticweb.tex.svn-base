@@ -1,0 +1,69 @@
+\chapter{Semantic Web}
+\textit{Semantic Web is not a separate Web but an extension of the current one, in which information is given well-defined meaning, better enabling computers and people to work in cooperation.
+\begin{center}  - Tim Berners Lee \end{center}
+}
+                                                             
+\section{Introduction} 
+Semantic Web ~\citep{berners2009linked} is about making structured data through machines can understand semantics of text. The world wide web consortium has created a set of standards for representing, storing and querying the structured data. A few of them are discussed here.
+\subsection{Resource Description Framework}
+The Resource Description Framework (RDF) \footnote{\url{http://en.wikipedia.org/wiki/Resource_Description_Framework}}
+\footnote{\url{http://www.w3.org/RDF/}} is based on the idea of making statements about resources in the form of subject-predicate-object. These expressions are known as triplets. The subject and object denotes the resource and the predicate denotes properties of the resources and conveys a relationship between the subject and the object. For example, to denote the following fact \textit{Norbert Fuhr received the Gerald Salton Award} in RDF is as the triplet: (i) a subject denoting \textit{Norbert Fuhr}, (ii) a predicate denoting \textit{received}, and (iii) an object denoting \textit{Gerald Salton Award}. 
+
+\begin{figure}[ht]
+\begin{center}
+\fbox{\scalebox{.6}{\includegraphics{rdf.pdf}}}
+\end{center}
+\caption{Resource Description Framework}
+\end{figure}
+
+RDFS (RDF Schema) defines classes which represent the concept of subjects, objects and predicates. Hence statements can be made on the classes of things, and types of relationships. A simple example is stating \textit{hasFather} relationship between a person and a person. It is also used to state a class or property as sub-type of another generic class. For example, a student is a sub-type of a person. 
+
+\subsection{Web Ontology Language}
+OWL (Web Ontology Language)\footnote{\url{http://en.wikipedia.org/wiki/Web_Ontology_Language}} allows to add more semantics to the schema. It allows to specify more about the properties and classes. Like RDF, OWL also expressed as triplets.\\
+For example, it can indicate that:
+\begin{enumerate}
+\item{If \textit{A isMarriedTo B} then this implies \textit{B isMarriedTo A}.}
+\item{If \textit{C isAncestorOf D} and \textit{D isAncestorOf E} then \textit{C isAncestorOf B}.}
+\item{OWL has ability to express two things are the same, for example a person on \textit{wikipedia} is the same one on the \textit{BBC}.}
+\end{enumerate}
+
+\subsection{SPARQL}
+SPARQL (SPARQL Protocol and RDF Query Language) is an RDF query language, able to retrieve and manipulate data stored in Resource Description Framework format.
+
+\begin{verbatim}
+SELECT ?capital ?country
+WHERE {
+  ?x abc:cityname ?capital ;
+     abc:isCapitalOf ?y.
+  ?y abc:countryname ?country ;
+     abc:isInContinent abc:Africa.
+}
+\end{verbatim}
+The above SPARQL query is to retrieve the all capital cities of all countries in Africa continent.
+
+
+\section{Achievement}
+
+Significant progress has been made on creating structured data from various sources and for various languages. They include:
+
+\begin{enumerate}
+
+\item{\textbf{DBPedia}}\\
+DBpedia\footnote{\url{http://dbpedia.org/About}} is a project aiming to extract structured content from the information created as part of the Wikipedia. This structured information is made available on the World Wide Web. The English version of the DBpedia data set currently describes 3.77 million things with 400 million facts. DBpedia has also been described as one of the more famous parts of the Linked Data project.
+
+\item{\textbf{WordNets}}\\
+WordNet is an ontology for natural language terms organized into taxonomic hierarchies. Nouns, verbs, adjectives and adverbs are grouped into synonym sets. The synsets are also organized into senses (i.e., corresponding to different meanings of the same term). The synsets are related to other synsets higher or lower in the hierarchy defined by different types of relationships. The most common relationships are the Hyponym/Hypernym (Is-A relationships), and the Meronym/Holonym (Part-of relationships).
+
+\item{\textbf{FOAF}}\\
+The Friend of a Friend (FOAF)\footnote{\url{http://www.foaf-project.org/}} project aims at creating a Web of structured pages describing people, the links between them and the things they create and do. FOAF makes it easier to share and use information about people and their activities, to transfer information between websites, and to automatically extend, merge and reuse it.
+
+\item{\textbf{Linked Open Data}}\\
+Linked Open Data (LOD)\footnote{\url{http://linkeddata.org/}} project aims to create interlinked versions of public Semantic Web data sets, promoting their use in new cross-domain applications by developers across the globe. It is useful when ontology or wordnets from different languages interlinked together. 
+%\todo{complete}
+%The new technologies for enabling scalable management of Linked Data collections in the many billions of triples will raise the state of the art of Semantic Web data management, both commercial and open-source, providing opportunities for new products and spin-offs, and make RDF a viable choice for organizations worldwide as a premier data management format. 
+\end{enumerate}
+
+\section*{Summary}
+In this chapter, we started with introduction of Semantic Web. Later we discussed the Semantic Web standards available which includes RDF, OWL, SPARQL. At the end, We discussed a set of structure data available like DBPedia, FOAF, WordNets and LOD.
+
+In the next chapter, we discuss about the similarity measurement between concepts and using them in information retrieval. 

@@ -1,0 +1,10 @@
+\newcommand{\iitbseal}{
+   \newfont{\iitblogofont}{iitblogo}
+   {\iitblogofont a}
+}
+
+\newcommand{\myiitbseal}{
+	\begin{figure}[h]
+		\centerline{\epsfig{figure=iit}}
+	\end{figure}
+}

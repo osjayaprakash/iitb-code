@@ -1,0 +1,132 @@
+\chapter{Semantic Full Text Search}
+In the previous chapter, semantic similarity measures and use of semantic similarity measures in information retrieval were discussed. Ontology was used externally to change the ranking process. In this chapter we will discuss about combining the full text search and ontological search to satisfy the information need of the user. ~\cite{Bast:2012:CSF:2379307.2379311} points out that each of these techniques have missing qualities from each others and explains the importance of integrating the ontological search and full text search together for serving information need. ~\cite{bast2012broccoli} explains broccoli system which implements full semantic text search.
+
+\section{Full Text search}
+	When the relevant documents contain the keywords or with small variations of the keywords with high frequency, full text queries work well. For large document collections, the number of matching documents is usually beyond what a human can read. Then precision is of primary concern for such queries. 
+ 
+	Entity oriented queries are problematic for full text search. First problem is, Information or Facts can be spread over more than documents, it is not necessary one document should contain all. The second problem is that expected results are not documents and also not passages in documents, but rather a list of entities with certain properties. Sometimes even if search engines manage to come up with few entities, well known entity will occupy the top slot in results.
+
+\section{Ontological search}
+	As web is growing exponentially, major issue is how to obtain facts and update Ontology. Many of the existing ontology data are created by users explicitly such as BTC dataset and some of them automatically generated from semi-structured data from web like DBPedia generated from the Wikipedia utilizing it structure. Whereas large portion of information available in terms of unstructured or natural language text.
+	Extracting the facts from natural language text is difficult problem due diversity and lack of structure. Even state of art  information extraction system is far from being error free.  
+	
+\section{Integration of full text search and ontology search}
+Since above two methods have their own disadvantages, Broccoli ~\citep{bast2012broccoli} combines the text collection and an ontology data. The text collection is plain text documents. The ontology consists of fact triplets. 
+Broccoli system consists of following steps:
+\begin{enumerate}
+\item{Entity recognition}
+\item{Sentence constituent identification}
+\item{Sentence constituent recombination}
+\item{Indexing}
+\item{Query processing}
+\end{enumerate}
+\begin{enumerate}
+\item{\textbf{Entity recognition}}\\
+First step of combining the ontology and text collection, is to identify instances of ontology in the text collection.
+
+\textit{Example:  IITB was founded in 1958. It has been ranked among the top engineering colleges in India.}
+
+Here both \textit{IITB} and \textit{It} refer to the instance in IITB from ontology. In Broccoli system, Entity recognition was done by utilizing the Wikipedia\footnote{\url{http://en.wikipedia.org}} structure. As a rule, first occurrence of entities have linked Wikipedia page. Consequent appearences of part or full name of that entity name are marked as instance to the entity in ontology.
+
+For resolving anaphora,  each occurrence of he, she, it, \textit{etc}. to the last recognized entity with gender match. Due simplistic and semi-structured nature of Wikipedia document, above simple techniques giving reasonable accuracy.
+
+\item{\textbf{Sentence constituent identification}}\\
+Purpose of sentence constituent identification is to break a sentence into number of basic blocks. Since they usually contain separate facts and have no direct relationship to other blocks. 
+
+SCI computes a tree with three kinds of nodes: (i) enumeration (ENUM), (ii) sub-clause (SUB) and concatenation (CONC). SCI trees are constructed based on the constituent parser SENNA\footnote{\url{http://ml.nec-labs.com/senna/}}. The parse tree is transformed by using set of rules. A few rules are:  
+\begin{enumerate}
+\item{Mark all nodes as ENUM, for which the children are either all NP
+or all VP.}
+\item{Mark each SBAR as SUB. If it starts with a word from a positive list define the first NP on the left as the head of this SUB, means sentence possess information about previous noun phrase.}
+\item{Mark as SUB each PP starting with a preposition from a positive list , and all PP's at the beginning of a sentence. These SUBs have no head.}
+\item{Mark as CONC all remaining nodes and contract away each CONC with only text nodes in its subtree.}
+
+\begin{figure}[h]
+\begin{center}
+\fbox{\scalebox{0.7}{\includegraphics{full.pdf}}}
+\end{center}
+\caption{SCI tree}
+\end{figure}
+
+
+\item{\textbf{Sentence constituent recombination}}\\
+Recombines the constituents identified by previous module to form contexts, which will be considered as units for search. Recombination of constituents is done by using the following rules:
+
+\begin{enumerate}
+\item{Take out each subtree labeled SUB. If a head was defined for it, add that head as the leftmost child. Then process each such subtree and the remaining part of the tree  as follows }
+\begin{enumerate}
+\item{For a leaf, there is exactly one context: the part of
+the sentence stored in that leaf.}
+\item{For an inner node, first recursively compute the
+set of contexts for each of its children.}
+\item{If the node is marked ENUM, the set of contexts
+for this node is computed as the union of the sets of contexts
+of the children.}
+\item{If the node is marked CONC, the set of contexts
+for this node is computed as the cross-product of the sets of
+contexts of the children.}
+\end{enumerate}
+\end{enumerate}
+
+\item{\textbf{Indexing}}\\
+\linebreak
+Entity oriented queries like \textit{Colleges located in Mumbai, have international tie-up.} 
+requires to: (1) find entities matching the ontology part of the query (\textit{Colleges in Mumbai}), (2) finding text passages matching the full-text part of the query (\textit{international tie-up}), and (3) finding occurrences of the entities from (1) that co-occur with the matches from (2).
+
+Relations are stored directly, with one index per relation. For example, index for relation \textit{locatedIn}:\\
+
+\begin{tabular}{ l c c c c }
+   			& .. & IITB & IITM & .. \\
+  locatedIn & .. & Mumbai & Chennai & .. \\
+  			& .. & 1 & 1 & .. \\
+\end{tabular}\\ 
+
+Similarly for indexing the context, prefix of fixed length words from contexts are used as indexing unit. For each index context id, and list of entities appears in the context are stored.\\
+
+\item{\textbf{Query Processing}}\\
+\linebreak
+Query for the system is a tree structure with two arcs namely \textit{ontology arcs} and \textit{occurs with arcs}. ontology arcs are relations in Ontology. 
+occurs-with arcs used to combine entities or classes to free text. 
+
+\begin{enumerate}
+
+\item{\textbf{Ontology arcs}}\\
+For each ontology arc compute the following sorted
+list of entities, where R denotes the relation of the arc
+\begin{enumerate}
+\item{Recursively compute the result $E_t$ for the target node t  ,
+which is a sorted list of entity ids with scores.}
+\item{Fetch the index list IR for the relation R, which is
+sorted by target entity;}
+\item{Find the list ER of all entities x such that
+   (x, y) $\in$ R for some y $\in$ $E_t$ , using intersection
+      of IR with $E_t$.}
+     
+For example, consider an ontology arc \textit{locatedIn}, and part of the query is \textit{colleges locatedIn Mumbai}. First all the entities for class colleges are retrieved and using locatedIn index we can find result by intersecting the entries in the locatedIn index list and entity list of colleges.
+\end{enumerate}
+
+\item{\textbf{Occurs with arcs}}\\
+For each occurs-with arc compute the following sorted
+list of entities, where W = {$w_1$ ,..., $w_k$ } denotes the set of
+words or prefixes in the target node, and Z =  {$z_1$,...,$z_l$ } 
+denotes the set of entities or classes in the target node.
+\begin{enumerate}
+\item{For each $z_i$ recursively compute its result $E_i$ , which is a
+sorted list of entities.}
+\item{For each $w_j$ , compute a context list $C_j$:
+In the index, we have a context list for each k-letter prefix,
+for some fixed k $\geq$ 1. Let I be the context list for the length-k prefix p of $w_j$ ,or if $w_j$ has length $\textless$ k, for $w_j$ . Search
+over I and for each context, write all index items matching
+$w_j$  to $C_j$ , and if at least one item matches append all entity index items from that context, too.}
+\item{Intersect the $C_1 ,..., C_k$  computed, such that the result list C contains all index items (c, e) where c is a context id that occurs in each of the $C_1,...,C_k$, and e is an entity that occurs in context c. }
+\item{Compute a subset C from C by keeping only those index items from C with a context id such that the context contains at least one entity from each of the $E_1,...,E_l$.
+}
+
+\item{Extract all entities from C , aggregate the scores of
+all postings with the same id using summation and produce
+a result list that is sorted by entity id.}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+

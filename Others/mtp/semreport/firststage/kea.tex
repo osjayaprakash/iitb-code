@@ -1,0 +1,56 @@
+
+
+\subsection{ KEA }
+
+KEA ~\citep{witten1999kea} describes about the keyphrase extraction and assignment. Keyphrase extraction and assignment are statistical learning methods requires a set of documents annotated with the manually assigned keywords.
+
+\textbf{keyphrase assignment} is to select the phrases from the controlled phrase vocabulary that best describe a document. The training data mapped to each phrase in the vocabulary, separate classifier is learned for each phrase. A new (test) document is given to all classifiers, the phrase of classifier which gives maximum positive score is choosen. We are not further discussing this technique because it is less relevant to the current scenario, where meta learning does not fit to the controlled vocabulary learning.
+
+\textbf{keyphrase extraction} is designed to choose the keyphrase from text document itself. It is based on lexical and information retrieval techniques to extract phrases from the document text. Training data is used to tune the parameters of each features.\\
+
+
+\noindent \textbf{Phrase Identification}
+
+\begin{itemize}
+\item{Candidate phrases are limited to a certain maximum length (normally 3 words)}.
+\item{Candidate phrases cannot be proper names}.
+\item{Candidate phrases can not start or end with stop words}.
+\end{itemize}
+All continous sequence of words in each sentence satisfy above three rules, are candidate phrases. Subphrases also part of candidate phrases.\\
+
+\noindent \textbf{Features}
+
+The initial version of KEA used only two features for deciding importance of phrases. They are TFxIDF and first occurence of each phrase in the document.
+
+\begin{itemize}
+\item \textbf{TFxIDF}
+TFxIDF is used as one of the feature. TF is the frequency of phrase in the test document and IDF is general usage or number documents the phrase used.
+
+\begin{equation}
+TFxIDF = \frac{freq(P,D)}{size(D)} x -log_{2} \frac{df(P)}{N}, where
+\end{equation}
+\begin{itemize}
+\item{freq(P,D) number of times phrase P occurs in document D.}
+\item{size(D) is the number of words in D}
+\item{df(P) is number of documents have the phrase P in total training corpus.}
+\item{N is total number of documents in collection.}
+\end{itemize}
+
+\item \textbf{Positional Information}
+First occurence of phrase in the document is used as another feature. It is calculated by number words precede the phrase's first occurence divided by the number words in the document.
+
+\end{itemize}
+
+Both the features are discretized. The real valued features are divided by the range they fall into and assigned categorical values.\\
+
+\noindent \textbf{Classification}
+
+Each candidate keyphrase is classified into 'YES' or 'NO' which indicates whether the candidate phrase is important or not (keyphrase or not) based on feature values of phrases.
+
+\begin{equation}
+P\lbrack YES \rbrack = \frac{Y}{Y+N} P_{TFxIDF} \lbrack t|YES \rbrack * P_{DISTANCE} \lbrack d|YES \rbrack
+\end{equation}
+
+\noindent \textbf{Results}
+
+KEA algorithm was test with technical abstracts of (110 training documents). 0.909 keyphrase matches on average out of 5 keyphrases extracted.  1.712 matches out of 15 keyphrases extracted.

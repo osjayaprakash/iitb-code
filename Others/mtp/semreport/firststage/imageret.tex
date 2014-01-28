@@ -1,0 +1,58 @@
+\section{Image Retrieval}
+
+An image retrieval system is a system for browsing, searching and retrieving images from a large repository of digital images.  Common methods of image retrieval utilize some method of adding metadata to images such as keywords or descriptions, so that retrieval can be performed over the annotation words.
+
+To search for images, we/user need to provide query terms such as keyword or image file and the system is expected to  return images `similar' to the query.
+
+Image retrieval system are broadly classified as, 
+
+\begin{itemize}
+\item Image meta search 
+\item Content based retrieval
+\end{itemize}
+
+\subsection{ Image meta search }
+
+Given query as words, and the descriptive meta data of each image is considered as text document. Image search system work as traditional information retrieval system where regardless of image semantics only description of image is only used for retrieval.
+
+\subsection{Content based retrieval}
+
+If we have documents and images annotated with them. Consider D is set of documents which contain both images and text. Images and texts are represented in term of feature vectors $R^{I}$ and $R^{T}$ respectively. These vectors represented in different vector space and there exist one-to-one mapping between them. Given text $T^{q} \in R^{T}$ we need to find an $I_{q} \in R_{I}$.
+
+For finding an image based on text, we need to learn a mapping function 
+
+\begin{equation}
+M : R^{T} -> R^{I} 
+\end{equation}
+
+Given text $T^{q}$ it suffices to find nearest image $M(R^{T})$. Since there is not direct correspondance between $R^{T}$ and $R^{I}$. The mapping has to be learned from tranining sample. One way is to map each space into intermediate spaces $U^{T}$ and $U^{I}$ such they have correspondance.
+
+\begin{equation}
+M_I : R^{I} -> U^{I} 
+\end{equation}
+and
+\begin{equation}
+M_T : R^{T} -> U^{T} 
+\end{equation}
+
+The two isomorphic spaces $U^{I}$ and $U^{T}$ and there is invertible mapping 
+
+\begin{equation}
+M : U^{T} -> U^{I} 
+\end{equation}
+
+Main problem is to find the subspaces $U^{T}$ and $U^{I}$, one way is to find two linear projections
+
+\begin{equation}
+P_I : R^{I} -> U^{I} 
+\end{equation}
+and
+\begin{equation}
+P_T : R^{T} -> U^{T} 
+\end{equation}
+
+\noindent \textbf{Correlation matching}
+
+Canonical Correlation Analysis (CCA) is a data analysis and dimensionality reduction method similar to Principle Component Analysis (PCA). Here, PCA deals with one dimension whereas CCA is joint dimensionality reduction of two e heterogeneous representations of the same data.
+
+%\todosmall{CCA and SCM - explain}

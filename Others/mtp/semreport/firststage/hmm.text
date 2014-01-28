@@ -1,0 +1,28 @@
+\subsection{ Hidden Markov Model }
+
+$
+P(KeySeq / Word, PosTag, IDFTF, titleScore) 
+$
+\begin{align}
+=& P(KeySeq) * P(Word, PosTag, IDFTF, titleScore / KeySeq)  \\
+\intertext{Using chain rule,}
+=& P(KeySeq) * P(Word/KeySeq) * P(PosTag/KeySeq,Word) \nonumber \\
+ & *  P(IDFTF/KeySeq, Word, PosTag)  * P(titleScore/KeySeq,KeySeq, Word, PosTag, IDFTF) \\
+\intertext{Independence assumptions,}
+=& P(KeySeq) * P(Word/KeySeq) * P(PosTag/KeySeq) P(IDFTF/KeySeq) * P(titleScore/KeySeq) 
+\intertext{Using markov assumption,}
+=& P(Key_{1}) * P(Key_2/Key_1) *.. * P(Key_n/key_{n-1}) *  \nonumber \\ 
+ & P(Word_1/Key_1) * P(Word_2/Key_2) *..* P(Word_n/Key_n) * \nonumber \\
+ & P(PosTag_1/Key_1) * P(PosTag_2/Key_2) *..* P(PosTag_n/Key_n) * \nonumber \\
+  & P(IDFTF_1/Key_1) * P(IDFTF_2/Key_2) *..* P(IDFTF_n/Key_n) * \nonumber \\
+ & P(titleScore_1/Key_1) * P(titleScore_2/Key_2) *..* P(titleScore_n/Key_n)  
+\end{align}
+
+
+
+\begin{figure}[h]
+\begin{center}
+\fbox{\scalebox{0.7}{\includegraphics{hmm.pdf}}}
+\end{center}
+\caption{Hidden Markov Model}
+\end{figure}

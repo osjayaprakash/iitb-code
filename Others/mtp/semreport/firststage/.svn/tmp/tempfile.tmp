@@ -1,0 +1,88 @@
+\chapter{Literature Study}
+
+\section{Unsupervised Keyword Extraction Methods}
+Unsupervised keyword extraction methods mostly rely on the relationship between the words in the text. Importance of the word is estimated based on exploiting the relationship to all other words. 
+
+\subsection{ TextRank }
+
+TextRank is a graph based unsupervised ranking algorithm formulated for text processing via extracting keywords and sentence extraction from documents. This method is based on Graph-based ranking algorithms like HITS algorithm \todosmall{reference} , Google Search Engine’s PageRank \todosmall{reference} where is used for social networks,  citation analysis and analysis of link structure world wide web. These graph based algorithms exploit the global information computed iteratively rather than looking at only surrounding information. 
+
+The basic idea of the graph based ranking models is ‘voting’ or ‘recommendation’. If one vertice connected to another vertex, basically it is casting a vote for that other vertex. The higher number of votes the one vertex gets, the same amount of importance it gets. The importance of the vertex which is casting vote is going to determine the amount of importance should be given to that vote. Effectively the score associated with the vertex is determined by votes that are cast for it and scores of vertices that are casting vote for it.
+
+Formally, considering G = (V, E) as directed graph with set of vertices V and set of edges E, where E is the subset of VxV. Let In($V_i$) be the set of vertices that are voting $V_i$ (predecessors) and Out($V_i$) be the set of vertices that $V_i$ is voting to. The score of vertex $V_i$ is calculated  as follows, \todosmall{reference}
+
+\begin{equation}
+S(V_i) = (1-d) + d \sum_{j \in In{V_i}}{\frac{1}{|Out(V_j)|}} * S(V_j)
+\end{equation}
+
+here d is called as damping factor that can be set between 0 and 1 initially, which has the role of adding a probability directly jumping from one vertex to another vertex (actually it signifies the default or implicit voting given by any vertex to all other vertices to avoid dead-end in random walk).
+
+Starting from arbitrarily assigned values to all vertices in the graph, the vertex values are computed iterated until convergence or given threshold is reached. After convergence is reached, the scores of the vertices represents the  importance of the vertices within the graph. 
+
+\noindent \textbf{Document as graph}
+
+To use the graph ranking algorithm for natural language text, first we should build a graph that represent the given text and interconnected words and relations between them. Based on the application, text units of various sizes can be used as vertices (examples words, sentences, phrases etc). similarly based on the application we can decide type of relations should exist between vertices e.g. lexical or semantic relations, contextual overlap etc.
+
+Overall steps of this algorithms is, 
+\begin{enumerate}
+
+\item Identify the text units of document and add them vertices to the graph.
+
+\item Figure out the relations between text units, that best suits the application. Edges that connects the vertices can be undirected or directed, Weighted or Unweighted.
+
+\item Assign the initial scores of vertices arbitrarily and iterate through ranking algorithm until convergence.
+
+\item Sort the vertices based on final score. and selects top-K vertices as candidate vertices or text units.
+
+\item \lbrack Optional \rbrack Post processing is applied to  vertices or textual units.
+
+\end{enumerate}
+
+The expected result of keyword extraction task is set of keywords or phrases for a given natural language text. Any relation between two lexical units can be used as connection between two vertices. Here in this paper, co-occurrence relation with the controlled distance is used as edges or connection between vertices. Two vertices are said to be connected if that two lexical units tend to co-occur within a window of N words, where ‘N’ can vary. 
+
+The vertices added to graph contains lexical units of certain types, for instance in this paper \todosmall{reference} they have used the individual words as the vertices and connection between vertices (individual words) represents that they co-occurred in the text within the window size N.\\  
+
+\noindent \textbf{Undirected Edges}
+
+Graph used for ranking keyword is undirected, whereas original algorithm was developed for directed graphs. If the two words tend to co-occur then they are mutually connected to each other, so each vetices in-degree equal to out-degree.\\
+
+\noindent \textbf{Weighted Edges}
+
+Edges in the TextRank model is weighted, they directly indicate the strength of connection between two vertices. In this if we two words tend to co-occur frequently then they will have strong (more weight) connection.
+
+By considering above undirected and Weighted cases, the original graph based ranking algorithm has been modified into as follows, 
+
+\begin{equation}
+WS(V_i) = (1-d) + d * \sum_{j \in In{V_i}}{\frac{W_{ji}}{\sum_{k \in Out{V_j}{W_{jk}} }}} * WS(V_j)
+\end{equation}
+
+
+\todo { Diagram - Text }
+
+\todo { Diagram - Text graph}
+
+\noindent \textbf{Process} : First the given document was tokenized, and syntatic classes of each word (part of speech tag) is identified. It is said that picking only certain syntatic classes gives the better precision (nouns and adjectives). Only the unigrams considered as vertices. Graph ranking algorithm run on the constructed  graph. Top fraction of vertices selected based on score given to vertices on convergence. If the selected unigram words tend to cooccur in the text they are combined together and considered as multi-word keywords or keyphrases.
+  
+\noindent \textbf{Results} : This algorithm was tested against 500 science articles where keywords algorithm was compared with manually annotated keywords. It is shown that this algorithm achieves highest F-score 36.2\% when edges are considered as undirected with co-occurence window size (N) is  2.
+
+
+\subsection{ RAKE }
+
+
+\pagebreak
+
+\section{Supervised Keyword Extraction Methods}
+
+\subsection{ KEA }
+
+\noindent \textbf{Features}
+
+\noindent \textbf{Process}
+
+\noindent \textbf{Classification}
+
+\noindent \textbf{Results}
+
+\subsection{ Naive Bayes }
+
+

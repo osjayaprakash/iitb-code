@@ -1,0 +1,187 @@
+\chapter{Semantic Similarity Measures} 
+In the previous chapter, we discussed about Semantic Web. In this chapter,  similarity measurements \citep{hliaoutakis2006information} between two terms or concetps are discussed. Semantic similarity measures among the concepts exploit the structural and semantic information and quantify the concept similarities in a given ontology.
+Ontology based semantic measures among concepts can be classified as follows:
+
+\begin{enumerate}
+\item {Path based similarity}
+\item {Information content based similarity}
+\item {Future based similarity}
+\end{enumerate}
+
+\section{Path based similarity} 
+Path based similarity measures utilize the information of the path length between two concepts, their generality or specificity and their relationship with other concepts.
+
+\begin{enumerate}
+
+
+\item{\textbf{Wu \& Palmer Measure}}
+\begin{equation}
+sim_{WP} (C_1 , C_2 ) = \frac{ 2H } { N_1+N_2+2H } 
+\end{equation}
+Wu and Palmer measure fits the intuition that concepts with greater depth would be more similar. Because of, concepts increased specificity in lower part of hierarcy.
+N1 and N2 are the number of \textit{is-a} links from $C_1$ and $C_2$ respectively to the most specific common subsumer concept C. H is the number of \textit{is-a} links from C to the root of ontology.
+
+
+\item{\textbf{Li Measure}}
+\begin{equation}
+sim_{Li} (C_1 , C_2 ) = e^{-\alpha L} \frac{ e^{\beta H} - e^{-\beta H} } { e^{\beta H} + e^{-\beta H} } 
+\end{equation}
+Li measures similarity by combining the shortest path and the depth of ontology information in a non-linear function. L stands for the shortest path between two concepts, α and β are scaling factors. H is same as in the previous Wu \& Palmer measure.
+
+
+\item{\textbf{Leacock \& Chodorow Measure}}
+\begin{equation}
+sim_{LC} (C_1 , C_2 ) = -log \frac{L}{2H}  
+\end{equation}
+This is more similar to Wu \& Palmer method, except logarithmic smoothing and removal of depth factor from denominator. As in the Li Measure, L is the shortest path between concepts $C_1$ and $C_2$. H is the number of \textit{is-a} links from C to the root of ontology.
+
+
+\item{\textbf{Mao Measure}}
+\begin{equation}
+sim_{Mao} (C1 , C2 ) = -log \frac{ \delta }{ L * log_{2}( 1+ d(C1) + d(C2) ) }  
+\end{equation}
+Mao measure considers the generality of the concepts by taking into account, the number of descendants. L stands for the shortest path between two concepts, d(C) stands for number of descendants of C. δ is a constant.
+\end{enumerate}
+
+
+\section{Information content based similarity} 
+The idea behind information content is that, more frequent terms
+are more general and hence provide less information. 
+
+\begin{equation}
+IC (C) = - log(P(C)) = -log \frac{ freq(C) } { freq(root) } 
+\end{equation}
+freq(C) is the frequency of concept C, and freq(root) is the frequency of root concept of the ontology. Frequency includes the frequencies of subsumed concepts in an is-a hierarchy. We define concept C the most informative subsumer of two concepts $C_1$ and $C_2$ i.e. $IC_{mis}(C1,C2)$ if concept C has the least probability among all shared subsumer between two concepts (it is most informative).
+
+\begin{enumerate}
+
+\item{\textbf{Resnik measure}}
+\begin{equation}
+sim_{Resnik} (C_1 , C_2 ) = IC_{mis}(C_1 , C_2 )
+\end{equation}
+More the information two concepts share, the more similar they are. But in this measure increase in the difference between two concepts does not influence the similarity value.
+
+\item{\textbf{Lin measure}}
+\begin{equation}
+sim_{Lin} (C_1 , C_2 ) = \frac{ 2*IC_{mis}(C_1 , C_2 ) }{ IC(C_1)+ IC(C_2) } 
+\end{equation}
+Lin measure also the information contents of each term, but uses them differently than Jiang. It takes ratio instead of difference. Since $ IC_{mis}(C_1,C_2) \textless IC (C_1)$ and $IC (C_2) $ the similarity value is normalized between 1 (similar concepts) and 0.
+
+\item{\textbf{Jiang measure}}
+\begin{equation}
+dist_{Jiang}(C_1, C_2) = IC(C_1)+ IC(C_2) - 2*IC_{mis}(C_1, C_2) 
+\end{equation}
+Jiang measure considers the information content of each term apart from shared information content. It is an inverted measurement. The distance between two concepts is the amount of information needed to fully describe both the concepts, excluding the amount of information that is common to both of them.
+\end{enumerate}
+
+
+\section{Feature based similarity} 
+Feature based methods measure the similarity between terms as functions of their properties or relationship to other similar terms in taxonomy. Common features tend to increase the similarity.
+
+\begin{enumerate}
+
+\item{\textbf{Tversky measure}}\\
+This model based on Set Theory, consider common and non-common features of compared items. 
+\begin{equation}
+sim_{tve}(C_1, C_2) = \alpha F(\psi(C_1) \cap \psi(C_2)) - \beta F(\psi(C_1) \backslash \psi(C_2)) - \gamma F(\psi(C_1) \backslash \psi(C_2))
+\end{equation} 
+$\psi(C_1)$ is feature set of concepts $C_1$ and $\psi(C_2)$ is feature set of concepts $C_2$. In wordnet, features are sysnonyms and glosses (textual descriptions), \textit{etc}.
+
+\item{\textbf{Rodriguez and Egenhofer measure}}  \\
+In this model, similarity is computed as the weighted sum of similarities between synsets, features (meronyms, attributes) and neighbourhood.
+\begin{equation}
+sim_{r\&e}(C_1, C_2) = w . S_{synset}(C_1,C_2) + u . S_{features}(C_1,C_2) + v . S_{neighbor}(C_1,C_2) 
+\end{equation} 
+S represents overlapping features between different concepts,
+\begin{equation}
+S(a, b) = \frac{|A \cap B| }{ |A \cap B| + \gamma(a,b) | A \backslash B | + (1-\gamma(a,b)) | B \backslash A | }
+\end{equation} 
+A and B are terms evaluated for concepts a,b. $\gamma(a,b)$ is calculated based on the depth of a and b in ontology
+
+	\[\gamma(a,b) = \left\{ 
+	\begin{array}{l l}
+	  \frac{depth(a)}{depth(a)+depth(b)} & depth(a) \leq depth(b) \\
+	  1- \frac{depth(a)}{depth(a)+depth(b)} & else \\ 
+	  \end{array} \right. \]
+
+
+
+\end{enumerate}
+
+
+
+\section{Use of similarity measures in Ranking} 
+The semantic measurements we have discussed so far, can be used in the information retrieval to improve the performance in various ways. One of the method, semantic similarity based retrieval model (SSRM) proposed by ~\cite{hliaoutakis2006information} uses the semantic similarity between terms to reassign the query weights and to expand the query. SSRM is similar to Vector space model (VSM) whereas VSM model uses query term frequency to calculate the document relevance. \\
+
+\textbf{Query Expansion} is the process of reformulating the user query to improve performance of information retrieval. The lack of common terms between query and document is not implying that documents are not relevant. Semantically similar concepts can be expressed in different words in document and queries(e.g., \textit{car}, \textit{automobile}). Query expansion techniques generally involves,(i) \textit{finding the synonyms of query words}, (ii) \textit{finding all morphological forms of words}, (iii) \textit{re-weighting the terms in the original query}.
+
+\begin{enumerate}
+\item{\textbf{Query Re-Weighting}} \\
+The weight $q_i$ of each query term i is adjusted based on its relationships with other semantically similar terms j within the same vector.
+\begin{equation}
+q_i = q_i + \sum_{sim(i,j) \geq t}^{j \neq i} q_j sim(i,j) 
+\end{equation}
+
+where t is a user defined threshold . Multiple related terms in the same
+query reinforce each other (e.g., \textit{car}, \textit{train}, \textit{metro}). The weights of non-similar terms remain unchanged (e.g., \textit{car}, \textit{laptop}).
+
+\item{\textbf{Query Expansion}}\\
+Initially, the query is expanded by synonym terms. Then, the query is added by terms higher or lower in the tree hierarchy which are semantically similar to terms already in the query. Each query term is represented by tree hierarchy. The neighbours of the term are tested and all terms with similarity greater than threshold T are also included in the query vector. This expansion may include terms more than one level higher or lower than the original term. Then, each query term i is assigned a weight by
+	\[q_i^` = \left\{ 
+	\begin{array}{l l}
+	  \sum \frac{1}{n} q_j sim(i,j) & \quad \mbox{if i is new term}\\
+	  q_i + \sum \frac{1}{n} q_j sim(i,j) & \quad \mbox{if i had weight $q_i$}\\ \end{array} \right. \]
+
+
+\item{\textbf{Document Similarity}} \\
+The similarity between an expanded and re-weighted query q and a document d is computed as
+		\begin{equation}
+		sim(q,d) = \frac{\sum_i \sum_j q_i d_j sim(i,j)}{\sum_i \sum_j q_i d_j}
+		\end{equation}
+The precision of retrieval in SSRM is higher than VSM ~\citep{hliaoutakis2006information}.  
+
+\end{enumerate}
+
+% SSRM ALGO
+
+\begin{algorithm}
+  \caption{SSRM Algorithm}
+  \begin{algorithmic}
+	\\  
+	\State \textbf{Input}: Query \textit{q}, Document \textit{d}, Semantic 	Similarity \textit{sim}, Thresholds \textit{t}, T, Ontology.
+	\State \textbf{Output}: Document similarity value \textit{Sim(d, q)}.\\\\
+
+	\begin{enumerate}
+	\item{\textbf{Compute Query term vector}: (q1,q2,...) using tf.idf weighting scheme.}
+	\item{\textbf{Compute Document term vector}: (d1,d2,...) using tf.idf weighting scheme.}
+	\item{\textbf{Query Re-weighting}: For all terms i in query compute new weight }
+		\begin{equation}
+		q_i^` = q_i + \sum q_j sim(i,j)
+		\end{equation}
+	\item{\textbf{Query Expansion}: For all terms j in query retrieve terms i from ontology satisfying sim(i,j) $\geq$ T .}
+	\item{\textbf{Term Weighting}: For all terms i in query compute new weight as}
+	
+	\[q_i^` = \left\{ 
+	\begin{array}{l l}
+	  \sum \frac{1}{n} q_j sim(i,j) & \quad \mbox{if i is new term}\\
+	  q_i + \sum \frac{1}{n} q_j sim(i,j) & \quad \mbox{if i had weight $q_i$}\\ \end{array} \right. \]
+	  
+	\item{\textbf{Query Normalization}: Normalize query by query length.}
+	\item{\textbf{Compute Document Similarity}}
+		\begin{equation}
+		sim(q,d) = \frac{\sum_i \sum_j q_i d_j sim(i,j)}{\sum_i \sum_j q_i d_j}
+		\end{equation}
+	
+	\end{enumerate}	
+ \end{algorithmic}
+\end{algorithm}
+	
+
+%TODO	
+%\section{Use of similarity measures in Document Filtering} 
+%~\cite{guha2003semantic}
+
+\section*{Summary}
+In this chapter, we learnt various similarity measures based on path length, information content and features. Later in the chapter, we discussed about SSRM algorithm which modifies the query vector to rank the document and results were shown the improvement in precision. 
+
+In the next chapter, we discuss the essence of combining full text search and ontology search, and explore the broccoli system which implements the semantic full text search.

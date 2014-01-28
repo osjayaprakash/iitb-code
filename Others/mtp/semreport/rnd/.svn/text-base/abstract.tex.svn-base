@@ -1,0 +1,6 @@
+\begin{abstract}
+
+The aim of this work is to experiment with designing a class of \textit{submodular functions} for extractive document summarization tasks. Monotone submodular functions tends to give near optimal solutions for subset selection (summary). Proper designing of function should measure the representativeness and diversity of summary sentences. We have experimented different coverage and diversity functions and discussed the results.
+
+
+\end{abstract}

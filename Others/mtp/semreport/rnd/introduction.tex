@@ -1,0 +1,153 @@
+\chapter{Introduction} 
+
+\begin{center} ...a wealth of information creates a poverty of attention...\\
+\textit{Herbert A. Simon}
+\end{center}
+
+\section{Problem Statement}
+
+In this project, we are trying to design a submodular functions for extractive text summarization tasks. 
+
+\section{Motivation}
+
+\section{Submodular Functions}
+
+We are given a set of objects $V = \{v_1,...,v_n\}$ and a
+function $F : 2^{V} \mapsto R$ that returns a real value for any subset $S \subseteq V$.
+
+\cbox{Subset Function (F) }{\\$F : 2^{V} \mapsto R$}
+
+In text summarization perspective, we are interested in finding subset of bounded size $|S| \leq K $ that maximizes the function F. Here the subset is set of sentences chosen as summary for the document.
+
+\cbox{Maximize the Subset Function }{
+\\$S = argmax_{S \subseteq V} F(S) $
+\\Subject to $|S| \leq K $.
+}
+
+Finding a subset that maximizes this function is hopelessly intractable. The submodular functions have wide applications in various domain including NLP such text summarization and word alignment.
+
+\cbox{Example\\}{
+F might correspond to the value or coverage of a set of sensor locations in an environment, and the goal is to find the best locations for a fixed number of sensors.}
+
+if the function is monotone submodular, still the objective is NP-Complete. But there exist a greedy algorithm which will give the near optimal solution.
+
+\subsection{Submodular Functions}
+
+Sub-modular functions are those that satisfy the property of
+diminishing returns.
+
+\cbox{}{
+for any A $\subseteq$ B $\subseteq$ V $\backslash \{v\}$ , a sub-modular function F must satisfy,
+\begin{enumerate}
+\item {$F(A+v) - F(A) \geq F(B+v) -F(B)$}
+\item {$F(A) +F(B) \geq F(A U B) + F(A \cap B)$}
+\end{enumerate}
+}
+
+\subsection{Monotone Submodular Functions}
+
+A set function F is
+monotone nondecreasing if
+$ \forall A \subseteq B,
+F(A) \leq F(B)$
+. Monotone nondecreasing
+submodular functions are referred to as
+monotone submodular functions.
+
+
+\section{Greedy Algorithm}
+
+\cbox{Algorithm 1 : Greedy Algorithm\\}{
+$G \leftarrow \emptyset$\\
+$U \leftarrow V$\\
+while $U \neq \emptyset$ do\\
+\hspace*{20 mm}$k \leftarrow argmax_{l \in U} 
+\frac{f(G U \{l\}) - f(G)}{ (c_{l})^{r} }$\\
+\hspace*{20 mm}$G \leftarrow G U \{k\}$
+if $ \sum_{i in G}{c_i} + c_k \leq B $ and
+$f(G U \{k\}) - f(G) \geq 0$\\
+\hspace*{20 mm}$U = U \backslash \{k\}$\\
+end while\\
+$ v^{*} \leftarrow argmax_{v in V, c_v \leq B} f({v}) $\\
+return $G_{f} = argmax_{S \in \{\{v^{*}\},G\}} f(S) $
+}
+
+
+\section{Proof of Near Optimal Solution}
+
+$ f(.): 2^V \mapsto \mathbb{R}$ is a
+monotone submodular function. and $P_{k}(S)$ is the gain of
+adding k to S, i.e., $f ( S U \{k\} ) - f(S)$ .\\
+
+\textbf{Lemma 1}\\
+\begin{equation} 
+\forall X,Y \subseteq V, \\
+f(X) \leq F(Y) + \sum_{k in X\backslash Y} P_k(Y)
+\end{equation}
+
+\textbf{Lemma 2}\\
+
+For i = 1,..., |G|, when $0 \leq r \leq 1$,
+
+\begin{equation} 
+f(S^*) - f(G_{i-1}) \leq 
+\frac{B^r |S^*|^{1-r}}{c_{v_i}^r} ( f(G_i) - f(G_{i-1}))
+\end{equation}
+
+and when $r \geq 1$,
+
+\begin{equation} 
+f(S^*) - f(G_{i-1}) \leq 
+\frac{B^r}{c_{v_i}^r} ( f(G_i) - f(G_{i-1}))
+\end{equation}
+
+\textbf{Theorem}\\
+
+\textbf{Case 1:} $\exists v \in V$ such that $f(\{v\}) > \frac{1}{2} f(S^*)$. Then it is guaranteed that $f(G_f) \geq f({v}) \geq \frac{1}{2} f(S^*)$ from Algorithm 1.
+
+\textbf{Case 2:} $\forall v \in V$ such that $f(\{v\}) \leq \frac{1}{2} f(S^*)$ then, 
+
+\hspace*{10mm} \textbf{Case 2.1:} if $\sum_{v in G} c_v \leq \frac{1}{2} B$, then $\forall v \notin G, c_v > \frac{1}{2} B$.  Submodularity of f(.) gives us:
+
+$f(S^*\backslash G) + f(S* \cap G) \geq f(S^*)$,
+
+which implies $f(S* \cap G) \geq \frac{1}{2} f(S^*)$. So we have 
+
+$f(G_f) \geq f(G) \geq f(S^* \cap G) \geq \frac{1}{2} f(S^*)$, 
+
+where the second in-equality is from monotonicity property.
+
+\hspace*{10mm} \textbf{Case 2.2:} if $\sum_{v in G} c_v > \frac{1}{2} B$, then
+
+$f(G) \geq (1-\prod_{k=1}^{|G|}{1-\frac{c_{v_k}^r}{B^r|S*|^{1-r}}}) f(S^*)$
+
+$f(G) \geq (1-\prod_{k=1}^{|G|}{1-\frac{c_{v_k}^r|S*|^{r-1}}{2^r(\sum_{k=1}^{|G|}{c_vk^r})^r}}) f(S^*)$
+
+$f(G) \geq (1-\prod_{k=1}^{|G|}{1-\frac{c_{v_k}^r|S*|^{r-1}}{2^r|G|^{r}}}) f(S^*)$
+
+$f(G) \geq (1-e^{-\frac{1}{2}(\frac{|S*|}{2|G|})^{r-1} }) f(S^*)$
+
+In all cases, we have 
+
+$f(G_f) \geq min\{ \frac{1}{2}, 1-e^{-\frac{1}{2}(\frac{|S*|}{2|G|})^{r-1} } \} f(S^*)$
+
+When r=1, we obtain constant approaximation factor, (i.e),
+
+\cbox{}{
+\begin{center}
+$f(G_f) \geq (1-e^\frac{-1}{2}) f(S^*)$
+\end{center}
+}
+
+\section{Contributions}
+
+Contibutions towards this $R\&D$ project includes, 
+
+\begin{enumerate}
+\item {implementation submodular functions for text summarization using similarity score as TFxIDF.}
+\item {experiments with semantic similarity measures instead of TFxIDF.}
+\item {Using different clustering methods K-means and Single link to improve the diversity of summary sentences.}
+\end{enumerate}
+
+
+

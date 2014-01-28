@@ -1,0 +1,26 @@
+\chapter{Literature Study}
+
+\section{Unsupervised Keyword Extraction Methods}
+Unsupervised keyword extraction methods mostly rely on the relationship between the words in the text. Importance of the word is estimated based on exploiting the relationship to all other words. 
+
+\input{textrank}
+
+\input{rake}
+
+\pagebreak
+
+\section{Supervised Keyword Extraction Methods}
+
+\input{kea}
+
+%\subsection{ Naive Bayes }
+
+\pagebreak
+
+\input{imageret}
+
+\section{Summary}
+In this chapter, we described existing works on keyword extraction. First two unsupervised approaches TextRank, RAKE explained. Next KEA algorithm based on supervised approach is explained. In the next chapter, we describe the experiments done on keyword extraction.
+
+
+

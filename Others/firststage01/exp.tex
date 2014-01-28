@@ -1,0 +1,23 @@
+\chapter{Experiments}
+
+\section{Unsupervised Approaches}
+
+\subsection{ Boosting based on occurrence and co-reference }
+
+Simple method for the determining top keywords will be counting the occurrences of each word in the given document. However the problem with this method is Natural language text the word is represented in different forms. Stemming may help normalizing different verb representation with morphemes. But Images and news articles mostly centered around the entities and then verb as relations if required. When we want to find the fraction of sentences that does covers entities or nouns we can use the co-reference resolution and anaphora resoultion. \\
+
+Steps of the experiments are, 
+\begin{enumerate}
+\item{Given document is tokenized in to lexical units.}
+\item{All possible noun phrases from the parse tree are considered as candidate for final key phrases.}
+\item{Stanford co-referencing run on the sentences of articles. From the output of co-reference, the frequency of each noun phrase is calculated.}
+\item{Apart from using the frequency of noun phrases in the articles}
+\end{enumerate}
+
+\subsection{ TextRank - Modified  }
+
+
+\section{Supervised Approaches}
+\subsection{ Naive Bayes }
+
+

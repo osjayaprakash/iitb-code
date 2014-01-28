@@ -1,0 +1,22 @@
+\begin{thebibliography}{}
+
+\bibitem[Erkan and Radev, 2004]{erkan2004lexrank}
+Erkan, G. and Radev, D.~R. (2004).
+\newblock Lexrank: Graph-based lexical centrality as salience in text
+  summarization.
+\newblock {\em J. Artif. Intell. Res.(JAIR)}, 22(1):457--479.
+
+\bibitem[Lin and Bilmes, 2010]{lin2010multi}
+Lin, H. and Bilmes, J. (2010).
+\newblock Multi-document summarization via budgeted maximization of submodular
+  functions.
+\newblock In {\em Human Language Technologies: The 2010 Annual Conference of
+  the North American Chapter of the Association for Computational Linguistics},
+  pages 912--920. Association for Computational Linguistics.
+
+\bibitem[Lin and Bilmes, 2011]{lin2011class}
+Lin, H. and Bilmes, J. (2011).
+\newblock A class of submodular functions for document summarization.
+\newblock In {\em ACL}, pages 510--520.
+
+\end{thebibliography}

@@ -1,0 +1,30 @@
+\chapter{Future work}
+
+
+In this work, we have studied various ways of mapping between large text and short text through extracting keyword from large text. \textit{•}
+
+In future, we are planning to using the external resources to better understand the relation between the large text and short text. For example, using the \textit{click-through logs} will be helpful.
+
+\section{Short term Plan}
+
+\begin{enumerate}
+\item{Complete current experiments}
+\item{Analysis of outcome}
+\item{Improving within current framework and available resources}
+\end{enumerate}
+
+\todo { explain above points }
+
+\section{Long term Plan}
+
+\begin{enumerate}
+\item{trying to utilize the external resources apart from Article + meta data}
+\item{utilizing the click through logs}
+\item{utilizing the semantic class from Freebase, or others }
+\end{enumerate}
+
+\todo {elaborate above with examples what it will solve}
+
+\subsection{Click-through logs}
+
+
