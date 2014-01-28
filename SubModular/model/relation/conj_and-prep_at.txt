@@ -1,0 +1,4 @@
+
+and, temperature, temperature, 4952865, 4952865, conj_and, 1, 0, 0
+and, temperature, temperature, 4952865, 4952865, conj_and, 1, 0, 0
+and, temperature, temperature, 4952865, 4952865, conj_and, 1, 0, 0

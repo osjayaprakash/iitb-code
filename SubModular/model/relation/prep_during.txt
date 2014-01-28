@@ -1,0 +1,16 @@
+
+dur,2596275,verb,0,15048292,noun,0
+dur,802690,verb,0,263752,noun,0
+dur,1035378,noun,0,897937,noun,0
+dur,1723473,verb,0,15006433,noun,0
+dur,2031827,verb,0,13568697,noun,0
+dur,1826333,verb,0,15047165,noun,0
+dur,2482403,verb,0,1142228,noun,0
+dur,2389840,verb,0,959164,noun,0
+dur,null,verb,0,37378,noun,0
+dur,1616591,verb,0,13397864,noun,0
+dur,2091392,verb,0,9154956,noun,0
+dur,2596275,verb,0,13284839,noun,0
+dur,958119,verb,0,13363223,noun,0
+dur,2596275,verb,0,37378,noun,0
+dur,153864,verb,0,13556027,noun,0

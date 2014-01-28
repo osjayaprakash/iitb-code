@@ -1,0 +1,11 @@
+
+pur,1147708,verb,0,639347,verb,0
+pur,1147708,verb,0,780305,verb,0
+pur,2044511,adjective,0,639347,verb,0
+pur,1637954,adjective,0,236261,verb,0
+pur,1637954,adjective,0,2216999,verb,0
+pur,1147708,verb,0,664380,verb,0
+pur,442662,verb,0,236261,verb,0
+pur,153605,adjective,0,1477630,verb,0
+pur,2304993,verb,0,636835,verb,0
+pur,636835,verb,0,664380,verb,0

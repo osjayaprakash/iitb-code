@@ -1,0 +1,4 @@
+
+and, soluble, soluble, 2341695, 2341695, conj_and, 1, 0, 0
+and, soluble, soluble, 2341695, 2341695, conj_and, 1, 0, 0
+and, soluble, soluble, 2341695, 2341695, conj_and, 1, 0, 0

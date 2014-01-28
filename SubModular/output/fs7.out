@@ -1,0 +1,83 @@
+% -*- coding: utf-8 -*-
+
+fstructure('roaming . ',
+	% Properties:
+	[
+	'markup_free_sentence'('roaming . '),
+	'xle_version'('XLE release of Dec 19, 2011 11:56.'),
+	'grammar'('./english/english.lfg'),
+	'grammar_date'('Sep 27, 2012 11:53'),
+	'grammar_version'('english-2007-06-11'),
+	'statistics'('1 solutions, 0.000 CPU seconds, 0.281MB max mem, 26 subtrees unified'),
+	'rootcategory'('ROOT'),
+	'hostname'('cfilt-desktop')
+	],
+	% Choices:
+	[
+	
+	],
+	% Equivalences:
+	[
+	
+	],
+	% Constraints:
+	[
+	cf(1,eq(attr(var(0),'PRED'),semform('roam',1,[],[]))),
+	cf(1,eq(attr(var(0),'CHECK'),var(1))),
+	cf(1,eq(attr(var(0),'NTYPE'),var(2))),
+	cf(1,eq(attr(var(0),'TNS-ASP'),var(3))),
+	cf(1,eq(attr(var(0),'NUM'),'sg')),
+	cf(1,eq(attr(var(0),'PERS'),'3')),
+	cf(1,eq(attr(var(0),'STMT-TYPE'),'header')),
+	cf(1,eq(attr(var(0),'VTYPE'),'main')),
+	cf(1,eq(attr(var(1),'_LEX-SOURCE'),'morphology')),
+	cf(1,eq(attr(var(2),'NSEM'),var(4))),
+	cf(1,eq(attr(var(2),'NSYN'),'common')),
+	cf(1,eq(attr(var(4),'COMMON'),'gerund')),
+	cf(1,eq(attr(var(3),'PERF'),'-_')),
+	cf(1,eq(attr(var(3),'PROG'),'+_')),
+	cf(1,eq(proj(var(5),'o::'),var(6))),
+	cf(1,in_set('HeaderPunct',var(6)))
+	],
+	% C-Structure:
+	[
+	cf(1,subtree(592,'ROOT',591,108)),
+	cf(1,phi(592,var(0))),
+	cf(1,cproj(592,var(5))),
+	cf(1,subtree(591,'ROOT',-,575)),
+	cf(1,phi(591,var(0))),
+	cf(1,subtree(575,'HEADER',-,555)),
+	cf(1,phi(575,var(0))),
+	cf(1,subtree(555,'NP',-,547)),
+	cf(1,phi(555,var(0))),
+	cf(1,subtree(547,'NPadj',-,615)),
+	cf(1,phi(547,var(0))),
+	cf(1,subtree(615,'NPzero',-,610)),
+	cf(1,phi(615,var(0))),
+	cf(1,subtree(610,'N',314,52)),
+	cf(1,phi(610,var(0))),
+	cf(1,subtree(314,'N',286,58)),
+	cf(1,phi(314,var(0))),
+	cf(1,subtree(286,'N',-,68)),
+	cf(1,phi(286,var(0))),
+	cf(1,subtree(68,'VN_BASE',-,60)),
+	cf(1,phi(68,var(0))),
+	cf(1,terminal(60,'roam',[1])),
+	cf(1,phi(60,var(0))),
+	cf(1,subtree(58,'V_SFX_BASE',-,56)),
+	cf(1,phi(58,var(0))),
+	cf(1,terminal(56,'+Verb',[1])),
+	cf(1,phi(56,var(0))),
+	cf(1,subtree(52,'VNPROG_SFX_BASE',-,53)),
+	cf(1,phi(52,var(0))),
+	cf(1,terminal(53,'+Prog',[1])),
+	cf(1,phi(53,var(0))),
+	cf(1,subtree(108,'PERIOD',-,74)),
+	cf(1,phi(108,var(0))),
+	cf(1,terminal(74,'.',[74])),
+	cf(1,phi(74,var(0))),
+	cf(1,semform_data(1,68,1,8)),
+	cf(1,fspan(var(0),1,11)),
+	cf(1,surfaceform(1,'roaming',1,8)),
+	cf(1,surfaceform(74,'.',9,11))
+	]).

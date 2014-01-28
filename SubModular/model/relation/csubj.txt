@@ -1,0 +1,11 @@
+
+agt,2428989,verb,0,1117411,verb,0
+aoj,13289583,noun,0,336141,verb,0
+agt,153864,verb,0,179714,verb,0
+agt,382665,verb,0,1477630,verb,0
+aoj,6924047,noun,0,2633906,verb,0
+agt,1049006,verb,0,1818343,verb,0
+aoj,2113647,verb,0,1639788,verb,0
+and,934313,verb,0,2688503,verb,0
+obj,999158,verb,0,2182934,verb,0
+obj,909540,verb,0,2647428,verb,0

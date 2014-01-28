@@ -1,0 +1,6 @@
+
+man,236261,verb,0,390536,verb,0
+man,2428989,verb,0,1602857,verb,0
+man,1646259,verb,0,153864,verb,0
+man,1886604,adjective,0,1147708,verb,0
+gol,2490018,verb,0,1740,adjective,0

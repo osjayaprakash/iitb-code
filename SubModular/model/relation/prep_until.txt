@@ -1,0 +1,10 @@
+
+tmt,1644264,verb,0,null,none,0
+tmt,2683126,verb,0,null,none,0
+tmt,2182934,verb,0,7254694,noun,0
+tmt,2629035,verb,0,null,none,0
+tmt,2644690,verb,0,7254694,noun,0
+tmt,9479363,noun,0,null,none,0
+tmt,2182934,verb,0,13768065,noun,0
+tmt,2182934,verb,0,null,none,0
+tmt,1718231,verb,0,49516,noun,0

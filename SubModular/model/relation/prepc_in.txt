@@ -1,0 +1,6 @@
+
+pur,14219078,noun,0,null,adjective,0
+pur,2579357,adjective,0,664380,verb,0
+pur,2233046,verb,0,2417363,verb,0
+scn,2688503,verb,0,2129054,verb,0
+pur,466782,verb,0,1994100,verb,0

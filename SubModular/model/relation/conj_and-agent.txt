@@ -1,0 +1,6 @@
+
+and, designate, designate, 1019817, 1019817, conj_and, 1, 0, 0
+and, designate, designate, 1019817, 1019817, conj_and, 1, 0, 0
+and, value, value, 5878912, 5878912, conj_and, 1, 0, 0
+and, value, value, 5878912, 5878912, conj_and, 1, 0, 0
+mod, water, waters, 14660064, 14660064, conj_and, 1, 0, 0

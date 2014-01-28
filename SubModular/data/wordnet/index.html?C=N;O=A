@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /~avishekdan/mtp/System/Source/Semantic Textual Similarity/data/wordnet</title>
+ </head>
+ <body>
+<h1>Index of /~avishekdan/mtp/System/Source/Semantic Textual Similarity/data/wordnet</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/~avishekdan/mtp/System/Source/Semantic%20Textual%20Similarity/data/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="LICENSE">LICENSE</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">1.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="Makefile">Makefile</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">9.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="Makefile.am">Makefile.am</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">246 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="Makefile.in">Makefile.in</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">8.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="adj.exc">adj.exc</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right"> 19K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="adv.exc">adv.exc</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right"> 85 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="cntlist">cntlist</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">876K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="cntlist.rev">cntlist.rev</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">876K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="data.adj">data.adj</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">3.1M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="data.adv">data.adv</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">508K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="data.noun">data.noun</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right"> 14M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="data.verb">data.verb</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">2.6M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="frames.vrb">frames.vrb</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">1.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="index.adj">index.adj</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">831K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="index.adv">index.adv</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">163K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="index.noun">index.noun</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">4.5M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="index.sense">index.sense</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">7.0M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="index.verb">index.verb</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">509K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="lexnames">lexnames</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">803 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="log.grind.2.1">log.grind.2.1</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">2.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="log.grind.3.0">log.grind.3.0</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">2.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="noun.exc">noun.exc</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right"> 27K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="sense.idx">sense.idx</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">7.0M</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="sentidx.vrb">sentidx.vrb</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right"> 72K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="sents.vrb">sents.vrb</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">5.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="verb.Framestext">verb.Framestext</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right">1.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="verb.exc">verb.exc</a></td><td align="right">29-Jun-2013 13:55  </td><td align="right"> 30K</td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.16 (Ubuntu) Server at 10.144.22.120 Port 80</address>
+</body></html>

@@ -1,0 +1,5 @@
+
+plf,2135760,adjective,0,15062473,noun,0
+obj,147020,verb,0,9479363,noun,0
+pur,2551386,adjective,0,14820139,noun,0
+man,2129684,adjective,0,1613064,adjective,0

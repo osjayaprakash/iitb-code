@@ -1,0 +1,7 @@
+
+aoj,1259112,adjective,0,7304963,noun,0
+bas,1259112,adjective,0,7304963,noun,0
+man,725621,adjective,0,13479010,noun,0
+man,566266,adjective,0,13533066,noun,0
+man,74437,adverb,0,15043767,noun,0
+man,1250892,adjective,0,14921746,noun,0

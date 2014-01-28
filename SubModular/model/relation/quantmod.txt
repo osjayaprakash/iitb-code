@@ -1,0 +1,10 @@
+
+man,null,none,0,73379,adverb,0
+bas,7040,adverb,0,null,none,0
+bas,7040,adverb,0,13562279,none,0
+bas,7040,adverb,0,13567065,none,0
+bas,73379,adverb,0,13568813,none,0
+bas,7040,adverb,0,null,none,0
+pof,null,none,0,15028658,noun,0
+bas,7040,adverb,0,null,none,0
+bas,73379,adverb,0,null,none,0

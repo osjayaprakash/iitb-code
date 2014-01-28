@@ -1,0 +1,4 @@
+
+gol,682517,verb,0,14792517,noun,0
+agt,919434,verb,0,null,noun,PERSON
+gol,2645182,verb,0,10311921,noun,0

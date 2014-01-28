@@ -1,0 +1,8 @@
+
+and, water, water, 14660064, 14660064, conj_and, 1, 0, 0
+and, g, g, 14695373, 14695373, conj_and, 1, 0, 0
+and, g, g, 14695373, 14695373, conj_and, 1, 0, 0
+and, soluble, soluble, 2341695, 2341695, conj_and, 1, 0, 0
+and, soluble, soluble, 2341695, 2341695, conj_and, 1, 0, 0
+and, optimal, optimal, 249689, 249689, conj_and, 1, 0, 0
+and, optimal, optimal, 249689, 249689, conj_and, 1, 0, 0

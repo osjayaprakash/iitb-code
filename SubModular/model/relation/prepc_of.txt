@@ -1,0 +1,12 @@
+
+mod,5590135,noun,0,664380,verb,0
+mod,13598072,noun,0,1818343,verb,0
+mod,5590135,noun,0,2259548,verb,0
+obj,5905960,noun,0,396151,verb,0
+obj,5597074,noun,0,1008846,verb,0
+obj,329711,adjective,0,2643904,verb,0
+mod,14219078,noun,0,664380,verb,0
+aoj,3702352,noun,0,4493369,noun,0
+mod,5590135,noun,0,636835,verb,0
+mod,5590135,noun,0,636835,verb,0
+mod,13573928,noun,0,2682162,verb,0

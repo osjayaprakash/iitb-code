@@ -1,0 +1,11 @@
+
+and,2607558,verb,0,null,none,0
+man,682517,verb,0,null,none,0
+man,977345,verb,0,null,none,0
+aoj,null,none,0,6248523,noun,0
+aoj,null,none,0,8389765,noun,0
+man,2109658,verb,0,47757,adverb,0
+man,1147708,verb,0,null,none,0
+man,56206,verb,0,null,none,0
+aoj,null,none,0,9268911,noun,0
+man,830481,adjective,0,null,none,0

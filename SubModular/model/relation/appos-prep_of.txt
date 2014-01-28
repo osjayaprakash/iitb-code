@@ -1,0 +1,10 @@
+
+and, hydrocarbon, hydrocarbon, 14714404, 14714404, appos, 1, 0, 0
+and, hydrocarbon, hydrocarbon, 14714404, 14714404, appos, 1, 0, 0
+and, hydrocarbon, hydrocarbon, 14714404, 14714404, appos, 1, 0, 0
+and, hydrocarbon, hydrocarbon, 14714404, 14714404, appos, 1, 0, 0
+aoj, law, law, 8326099, 8326099, appos, 1, 0, 0
+aoj, law, law, 8326099, 8326099, appos, 1, 0, 0
+and, water, water, 14660064, 14660064, appos, 1, 0, 0
+and, water, water, 14660064, 14660064, appos, 1, 0, 0
+mod, water, water, 7828101, 7828101, appos, 1, 0, 0

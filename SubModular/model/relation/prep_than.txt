@@ -1,0 +1,13 @@
+
+bas,100048,adverb,0,null,noun,0
+bas,1611077,adjective,0,13563059,none,0
+bas,1447007,adjective,0,null,none,0
+bas,2612325,adjective,0,null,noun,0
+bas,1185927,verb,0,13596369,noun,0
+bas,2230669,verb,0,9928995,noun,0
+bas,251307,adjective,0,13596369,noun,0
+bas,1611077,adjective,0,null,none,0
+bas,1250892,adjective,0,null,none,0
+bas,1259112,adjective,0,14451155,none,0
+bas,1252773,adjective,0,14649196,noun,0
+bas,1259112,adjective,0,14450312,noun,0

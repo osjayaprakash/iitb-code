@@ -1,0 +1,17 @@
+
+mod,13822672,noun,0,null,none,0
+mod,28404,noun,0,null,none,0
+qua,5742841,noun,0,null,none,0
+mod,8379933,noun,0,null,none,0
+mod,9323187,noun,PLACE,null,none,0
+mod,13854432,noun,0,null,none,0
+mod,13094498,noun,0,null,none,0
+qua,5857862,noun,0,null,none,0
+mod,3049932,noun,0,null,none,0
+mod,570312,noun,0,null,none,0
+mod,4544654,noun,0,null,none,0
+mod,570312,noun,0,null,none,0
+mod,8324833,noun,0,null,none,0
+qua,8389765,noun,0,null,none,0
+qua,199203,noun,0,null,none,0
+mod,13725184,noun,0,null,none,0

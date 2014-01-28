@@ -1,0 +1,10 @@
+
+gol,678350,verb,0,152851,adjective,0
+obj,2237102,verb,0,null,adjective,0
+gol,2723939,verb,0,1886604,adjective,0
+gol,2490018,verb,0,1654031,adjective,0
+man,2048615,verb,0,990931,adjective,0
+gol,2608499,verb,0,69565,adjective,0
+man,419671,verb,0,1463112,adjective,0
+gol,2659138,verb,0,1608701,adjective,0
+obj,2302430,verb,0,1611077,adjective,0

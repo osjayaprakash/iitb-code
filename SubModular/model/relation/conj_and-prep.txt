@@ -1,0 +1,2 @@
+
+mod, characteristic, characteristic, 4676128, 4676128, conj_and, 1, 0, 0

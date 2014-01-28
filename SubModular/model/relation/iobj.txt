@@ -1,0 +1,4 @@
+
+gol,2294885,verb,0,9092958,noun,0
+obj,878156,verb,0,null,noun,0
+obj,1018451,verb,0,7828101,noun,0

@@ -1,0 +1,3 @@
+
+obj,null,noun,0,202884,verb,0
+gol,878156,verb,0,1723473,verb,0
