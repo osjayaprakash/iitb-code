@@ -45,9 +45,9 @@ public class Summarize {
 		IDF.loadIDF(Constants.IDF_DIR);
 		isSingleDone = true;
 		
-		System.err.println("\t\t********** Aspect Tree Start **********");
+		Main.println("\t\t********** Aspect Tree Start **********");
 		aspectRoot.print("");
-		System.err.println("\t\t********** Aspect Tree End **********");
+		Main.println("\t\t********** Aspect Tree End **********");
 	}
 
 	
@@ -61,8 +61,6 @@ public class Summarize {
 
 		Double prevScore = 0.0;
 		
-		scoreL = new ScoreL( this );
-		scoreA = new ScoreA2( this );
 		
 		while (true) {
 			Integer sentID = -1;
@@ -89,9 +87,9 @@ public class Summarize {
 				score = csore + tradeOff * dscore;
 				scoreDiff = score - prevScore;
 				scoreDiff = scoreDiff / Math.pow(sent.wordList.length, tradeR);
-				System.err.println("=>"+sent.getSentString());
-				System.err.println("L(S): " + csore +  "\tA(S): " + dscore);
-				System.err.println("**" + "f(S)=" + prevScore +  "\tf(S+"+sentId+")=" + score + "\tdiff="+scoreDiff);
+				Main.println("=>"+sent.getSentString());
+				Main.println("L(S): " + csore +  "\tA(S): " + dscore);
+				Main.println("**" + "f(S)=" + prevScore +  "\tf(S+"+sentId+")=" + score + "\tdiff="+scoreDiff);
 				
 				if (scoreDiff > maxScore) {
 					sentID = sentId;
@@ -107,7 +105,7 @@ public class Summarize {
 				break;
 			}
 			
-			System.err.println("===>" + maxScore + " " + prevScore);
+			Main.println("===>" + maxScore + " " + prevScore);
 			Sentence sent = sentList[sentID];
 			res.add(sent); // as a result
 			summSentences.add(sentID); // mark examined
@@ -115,7 +113,7 @@ public class Summarize {
 			currBucketSize = currBucketSize + sent.wordList.length;
 			prevScore = maxPrevScore;
 			
-			System.err.println("res = " + sentID + " = "+ sentList[sentID].getSentString());
+			Main.println("res = " + sentID + " = "+ sentList[sentID].getSentString());
 		}
 		return res;
 	}
@@ -133,7 +131,7 @@ public class Summarize {
 		// /
 		sentList = new Sentence[sentArr.length];
 		
-		System.err.println("\t\t**********Sentence Construction");
+		Main.println("\t\t**********Sentence Construction");
 		/**** Sentence Construction */
 		int iSentID = 0;
 		for (String sent : sentArr) {
@@ -142,16 +140,16 @@ public class Summarize {
 			sentList[iSentID] = s;
 			iSentID++;
 		}
-		System.err.println("\t\t********** Sim Computation Started **********");
+		Main.println("\t\t********** Sim Computation Started **********");
 
 		/*** Similarity Computation ***/
 		simWrapper = new SimWrapper(sentList, this);
-		System.err.println("\t\t********** Sim Computation Ended **********");
+		Main.println("\t\t********** Sim Computation Ended **********");
 
-		System.err.println("\t\t********** Clusetering Started **********");
+		Main.println("\t\t********** Clusetering Started **********");
 		//clustering.run();
 		hClustering.run();
-		System.err.println("\t\t********** Clusetering Ended **********");
+		Main.println("\t\t********** Clusetering Ended **********");
 		
 		/*** Run algorithm ***/
 		return doProcess();

@@ -23,12 +23,14 @@ public class HardClustering {
 				stack.push(asp);
 		}
 		
+		/*
 		for(Aspect asp:lasp){
-			System.err.print( asp.getName() +"-->");
+			Main.print( asp.getName() +"-->");
 				for( String w: asp.getKeywordList() )
-					System.err.print( w+"," );
-			System.err.println("");
+					Main.print( w+"," );
+			Main.println("");
 		}
+		*/
 		
 		for(int i=0;i<summ.sentList.length;i++)
 			clusterSentenceRandom(i, lasp);
@@ -45,7 +47,9 @@ public class HardClustering {
 				maxScore = score;
 			}
 		}
-		System.err.println( sent.getSentString() +"==>\t{" + sent.aspect.getName() +"}={"+ maxScore  +"}"  );
+		/*
+			Main.println( sent.getSentString() +"==>\t{" + sent.aspect.getName() +"}={"+ maxScore  +"}"  );
+		*/
 	}
 	
 	public Double getMatch( Sentence sent , List<String> keywordList ){

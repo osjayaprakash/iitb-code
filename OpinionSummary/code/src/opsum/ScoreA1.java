@@ -13,7 +13,7 @@ public class ScoreA1 implements ScoreA {
 			Sentence sent =  summ.sentList[iSentID];
 			Double w = sent.aspect.getWeight();
 			Double sScore = summ.sentList[iSentID].dSentiScore;
-			res += (w* sScore);
+			res += (w* Math.abs(sScore));
 		}
 		return res;
 	}

@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class ScoreA3 implements ScoreA {
 	Summarize summ = null;
-	
-	public ScoreA3( Summarize sl ){
+
+	public ScoreA3(Summarize sl) {
 		summ = sl;
 	}
-	
+
 	public Double getAScore() {
 		Double res = 0.0;
 		/* negative sum and posive sum */
@@ -39,7 +39,6 @@ public class ScoreA3 implements ScoreA {
 		}
 
 		for (Aspect asp : aspScorePos.keySet()) {
-
 			Double w = asp.getWeight();
 
 			// take positive sum
@@ -47,11 +46,16 @@ public class ScoreA3 implements ScoreA {
 			// add budgeted score to result
 			res += Math.min(tScore, asp.getBudget() * w);
 
-			// take positive sum
+		}
+
+		for (Aspect asp : aspScoreNeg.keySet()) {
+			Double w = asp.getWeight();
+
+			// take negative sum
 			Double tScoreNeg = aspScoreNeg.get(asp);
 			// add budgeted score to result
 			res += Math.min(tScoreNeg, asp.getBudget() * w);
-}
+		}
 
 		return res;
 	}

@@ -88,9 +88,9 @@ public class Aspect {
 	}
 	
 	public void print(String prefix){
-		System.err.print( prefix );
-		System.err.print( nodeName + ", w=" + getWeight() + ", b=" + getBudget());
-		System.err.print("\n");
+		Main.print( prefix );
+		Main.print( nodeName + ", w=" + getWeight() + ", b=" + getBudget());
+		Main.print("\n");
 		
 		prefix = prefix + "\t";
 		for(Aspect asp: getChildren()){
