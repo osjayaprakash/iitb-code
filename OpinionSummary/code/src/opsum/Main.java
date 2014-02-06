@@ -55,11 +55,16 @@ public class Main {
 				return 0;
 			}
 		});
+		
 		for (Sentence sent : lSent1) {
 			System.out.println(sent.getSentID() + ")\t" + sent.getSentString());
 		}
+		
 		System.out.println("Total number of words :: "
 				+ summarizer.currBucketSize);
+		
+		summarizer.aspectRoot.printOk("");
+		
 	}
 
 	public static void runTestForFile(String filename, String outPrefix)
@@ -151,7 +156,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		runTest();
-		// runSample();
+		//runTest();
+		runSample();
 	}
 }

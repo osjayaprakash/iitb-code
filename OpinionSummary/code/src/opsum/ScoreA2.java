@@ -31,6 +31,10 @@ public class ScoreA2 implements ScoreA {
 			Double w = asp.getWeight();
 			Double tScore = aspScore.get(asp); 
 			res += Math.min(tScore, asp.getBudget()) * w ;
+			
+			asp.d_Budget = asp.getBudget() * w;
+			asp.d_Score = tScore;
+			asp.d_MXScore = Math.max(tScore, asp.d_MXScore);
 		}
 		
 		return res;

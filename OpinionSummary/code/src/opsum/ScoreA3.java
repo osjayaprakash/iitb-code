@@ -2,6 +2,8 @@ package opsum;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class ScoreA3 implements ScoreA {
 	Summarize summ = null;
@@ -38,24 +40,33 @@ public class ScoreA3 implements ScoreA {
 
 		}
 
+		Set <Aspect> ts = new TreeSet<Aspect>();
+		ts.addAll( aspScorePos.keySet() );
+		ts.addAll( aspScoreNeg.keySet() );
+		
 		for (Aspect asp : aspScorePos.keySet()) {
 			Double w = asp.getWeight();
 
 			// take positive sum
-			Double tScore = aspScorePos.get(asp);
+			Double tScorePos = 0.0;
+			if( aspScorePos.containsKey(asp) )
+				tScorePos = aspScorePos.get(asp);
+			
+			// take negative sum
+			Double tScoreNeg = 0.0;
+			if( aspScoreNeg.containsKey(asp) )
+				tScoreNeg = aspScoreNeg.get(asp);
+			
+			Double tScore = tScorePos+tScoreNeg;
 			// add budgeted score to result
 			res += Math.min(tScore, asp.getBudget() * w);
 
+			asp.d_Budget = asp.getBudget() * w;
+			asp.d_Score = tScore;
+			asp.d_MXScore = Math.max(tScore, asp.d_MXScore);
+			
 		}
 
-		for (Aspect asp : aspScoreNeg.keySet()) {
-			Double w = asp.getWeight();
-
-			// take negative sum
-			Double tScoreNeg = aspScoreNeg.get(asp);
-			// add budgeted score to result
-			res += Math.min(tScoreNeg, asp.getBudget() * w);
-		}
 
 		return res;
 	}

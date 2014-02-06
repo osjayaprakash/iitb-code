@@ -13,7 +13,8 @@ public class Aspect {
 	private Integer nodeNo = -1;
 	private List<String> Keywords = new ArrayList<String>();
 	private Integer level = -1;
-
+	
+	public Double d_Budget = 0.0, d_Score = 0.0, d_MXScore=0.0;
 
 	public Aspect() {
 	}
@@ -97,4 +98,16 @@ public class Aspect {
 			asp.print( prefix);
 		}
 	}
+	
+	public void printOk(String prefix){
+		System.out.print( prefix );
+		System.out.print( nodeName + ", w=" + getWeight() + ", b=" + d_Budget+", bud=" + d_Budget+", mscore=" + d_MXScore +", score=" + d_Score);
+		System.out.print("\n");
+		
+		prefix = prefix + "\t";
+		for(Aspect asp: getChildren()){
+			asp.printOk( prefix);
+		}
+	}
+	
 }
