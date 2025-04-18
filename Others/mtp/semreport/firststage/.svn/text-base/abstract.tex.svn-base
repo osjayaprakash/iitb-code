@@ -1,5 +1,0 @@
-\begin{abstract}
-
-The aim of this work is to \textit{experiment} with designing a class of submodular functions for document summarization tasks. Designing of submodular functions which scores the summary of text document based on its representatives and divesity in the summary.
-
-\end{abstract}

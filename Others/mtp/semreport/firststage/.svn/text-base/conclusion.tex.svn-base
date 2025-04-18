@@ -1,9 +1,0 @@
-\chapter{Conclusion and Future work}
-
-\subsection{Conclusion}
-
-The problem of retrieving an image that matches the semantics of a text document is difficult. We are trying to solve this problem by extracting important keywords from the text document and using keywords for retrieving a relevant image. 
-
-In this report, we discussed our overall system and existing work on keyword extraction based on unsupervised and supervised approaches. Our experiments on keyword extraction based on \textit{Counting and Proximity}, \textit{Modified TextRank}, \textit{Naive Bayes} and \textit{HMM} are discussed with results.
-
-
